@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charte Graphique Automobile Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600;700&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 60px 0;
+        }
+
+        .slide-content {
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-nav {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #D4AF37;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 300;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #D4AF37;
+        }
+
+        /* Slide 1 - Hero */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23111" width="1200" height="800"/><path fill="%23D4AF37" opacity="0.1" d="M200,400 Q600,200 1000,400 T1200,400 V800 H0 V400 Q200,200 400,400"/></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 4.5rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #D4AF37 0%, #F4E87C 50%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(135deg, #D4AF37 0%, #F4E87C 100%);
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Color Palette */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .color-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .color-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .color-sample {
+            width: 100%;
+            height: 120px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .primary-gold { background: linear-gradient(135deg, #D4AF37 0%, #F4E87C 100%); }
+        .deep-black { background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%); }
+        .platinum { background: linear-gradient(135deg, #E5E4E2 0%, #C0C0C0 100%); }
+        .royal-blue { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
+        .emerald { background: linear-gradient(135deg, #065f46 0%, #10b981 100%); }
+        .pure-white { background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); }
+
+        /* Typography */
+        .typo-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .typo-examples h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            color: #D4AF37;
+            margin-bottom: 20px;
+        }
+
+        .typo-examples h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #E5E4E2;
+            margin-bottom: 15px;
+        }
+
+        .typo-examples p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #cccccc;
+        }
+
+        /* Logo Design */
+        .logo-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .logo-variant {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 25px;
+            padding: 40px;
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-variant:hover {
+            transform: translateY(-5px);
+        }
+
+        .logo-image {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+            margin: 0 auto 20px;
+            border-radius: 15px;
+            filter: drop-shadow(0 10px 20px rgba(212, 175, 55, 0.2));
+        }
+
+        /* Website Layout Preview */
+        .website-preview {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 50px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .browser-bar {
+            background: #2a2a2a;
+            border-radius: 10px 10px 0 0;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .browser-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .dot-red { background: #ff5f57; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #28ca42; }
+
+        .website-content {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            padding: 40px;
+            border-radius: 0 0 10px 10px;
+            text-align: left;
+        }
+
+        .website-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .website-nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .website-nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 300;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .hero-section h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            color: #D4AF37;
+            margin-bottom: 20px;
+        }
+
+        /* Applications */
+        .applications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .application-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .application-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .application-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #D4AF37 0%, #F4E87C 100%);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 30px;
+            }
+            
+            .hero h1 {
+                font-size: 4rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            /* Navigation mobile */
+            .nav {
+                padding: 15px 0;
+            }
+            
+            .logo-nav {
+                font-size: 1.4rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block !important;
+            }
+
+            /* Hero mobile */
+            .hero h1 {
+                font-size: 2.8rem;
+                line-height: 1.1;
+                margin-bottom: 25px;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+                margin-bottom: 40px;
+                padding: 0 10px;
+            }
+
+            .hero-logo {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 30px;
+            }
+
+            /* Section headers mobile */
+            .section-header {
+                margin-bottom: 40px;
+            }
+
+            .section-header h2 {
+                font-size: 2.2rem;
+                margin-bottom: 15px;
+            }
+
+            .section-header p {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+
+            /* Color grid mobile */
+            .color-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                margin-top: 30px;
+            }
+
+            .color-card {
+                padding: 20px;
+            }
+
+            .color-sample {
+                height: 100px;
+            }
+
+            /* Typography mobile */
+            .typo-showcase {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                margin-top: 30px;
+            }
+
+            .typo-examples h1 {
+                font-size: 2.2rem;
+            }
+
+            .typo-examples h2 {
+                font-size: 1.8rem;
+            }
+
+            .typo-examples p {
+                font-size: 1rem;
+            }
+
+            /* Logo showcase mobile */
+            .logo-showcase {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                margin-top: 30px;
+            }
+
+            .logo-variant {
+                padding: 25px;
+            }
+
+            .logo-variant svg {
+                width: 150px !important;
+                height: 150px !important;
+            }
+
+            /* Version horizontale mobile */
+            .logo-variant div[style*="display: flex"] {
+                flex-direction: column !important;
+                gap: 30px !important;
+                text-align: center !important;
+            }
+
+            .logo-variant div[style*="text-align: left"] {
+                text-align: center !important;
+            }
+
+            .logo-variant div[style*="font-size: 3.2rem"] {
+                font-size: 2.2rem !important;
+            }
+
+            .logo-variant div[style*="font-size: 1.1rem"] {
+                font-size: 0.9rem !important;
+            }
+
+            .logo-variant div[style*="width: 80px"] {
+                width: 60px !important;
+                margin: 0 auto !important;
+            }
+
+            /* Website preview mobile */
+            .website-preview {
+                margin-top: 30px;
+                padding: 20px;
+            }
+
+            .website-content {
+                padding: 25px;
+            }
+
+            .website-header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .website-header div[style*="display: flex"] {
+                justify-content: center;
+            }
+
+            .website-nav {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-section {
+                padding: 40px 0;
+            }
+
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .hero-section p {
+                font-size: 1rem;
+            }
+
+            /* Applications mobile */
+            .applications-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                margin-top: 30px;
+            }
+
+            .application-card {
+                padding: 25px;
+            }
+
+            .application-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            /* Slide navigation mobile */
+            .slide-nav {
+                right: 20px;
+            }
+
+            .slide-nav button {
+                width: 10px;
+                height: 10px;
+                margin: 8px 0;
+            }
+
+            /* CTA buttons mobile */
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 0.9rem;
+                margin: 0 10px;
+            }
+
+            /* Slides mobile */
+            .slide {
+                padding: 80px 0 40px;
+                min-height: auto;
+            }
+
+            /* Monogramme mobile */
+            .logo-variant div[style*="font-size: 4rem"] {
+                font-size: 3rem !important;
+                letter-spacing: 8px !important;
+            }
+
+            /* Concept section mobile */
+            div[style*="max-width: 900px"] {
+                max-width: 100% !important;
+                margin-top: 40px !important;
+            }
+
+            div[style*="padding: 40px"] {
+                padding: 25px !important;
+            }
+
+            /* Browser preview mobile */
+            .browser-bar {
+                padding: 12px 15px;
+            }
+
+            .browser-bar span {
+                font-size: 0.8rem;
+                margin-left: 15px;
+            }
+
+            .browser-dot {
+                width: 10px;
+                height: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            /* Hero très petit écran */
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                padding: 0 5px;
+            }
+
+            .hero-logo {
+                width: 80px;
+                height: 80px;
+            }
+
+            /* Section headers très petit écran */
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .section-header p {
+                font-size: 0.95rem;
+            }
+
+            /* Logo nav très petit écran */
+            .logo-nav {
+                font-size: 1.2rem;
+            }
+
+            /* Logo variants très petit écran */
+            .logo-variant svg {
+                width: 120px !important;
+                height: 120px !important;
+            }
+
+            .logo-variant {
+                padding: 20px;
+            }
+
+            /* Applications très petit écran */
+            .application-card {
+                padding: 20px;
+            }
+
+            .application-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .application-card p {
+                font-size: 0.9rem;
+            }
+
+            /* CTA très petit écran */
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 0.85rem;
+            }
+
+            /* Slide navigation très petit écran */
+            .slide-nav {
+                right: 15px;
+            }
+
+            .slide-nav button {
+                width: 8px;
+                height: 8px;
+                margin: 6px 0;
+            }
+
+            /* Website grid très petit écran */
+            div[style*="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))"] {
+                grid-template-columns: 1fr !important;
+                gap: 15px !important;
+            }
+
+            /* Monogramme très petit écran */
+            .logo-variant div[style*="font-size: 3rem"] {
+                font-size: 2.5rem !important;
+                letter-spacing: 6px !important;
+            }
+
+            /* Version horizontale très petit écran */
+            .logo-variant div[style*="font-size: 2.2rem"] {
+                font-size: 1.8rem !important;
+            }
+        }
+
+        /* Orientation paysage mobile */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .slide {
+                min-height: auto;
+                padding: 60px 0 30px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+            }
+
+            .hero p {
+                margin-bottom: 30px;
+            }
+
+            .hero-logo {
+                width: 70px;
+                height: 70px;
+                margin-bottom: 20px;
+            }
+
+            .section-header {
+                margin-bottom: 30px;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Menu mobile styles */
+        .mobile-menu a:hover {
+            background: rgba(212, 175, 55, 0.1);
+            color: #D4AF37;
+        }px !important;
+                height: 120px !important;
+            }
+
+            .logo-variant {
+                padding: 20px;
+            }
+
+            /* Applications très petit écran */
+            .application-card {
+                padding: 20px;
+            }
+
+            .application-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .application-card p {
+                font-size: 0.9rem;
+            }
+
+            /* CTA très petit écran */
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 0.85rem;
+            }
+
+            /* Slide navigation très petit écran */
+            .slide-nav {
+                right: 15px;
+            }
+
+            .slide-nav button {
+                width: 8px;
+                height: 8px;
+                margin: 6px 0;
+            }
+
+            /* Website grid très petit écran */
+            div[style*="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))"] {
+                grid-template-columns: 1fr !important;
+                gap: 15px !important;
+            }
+
+            /* Monogramme très petit écran */
+            .logo-variant div[style*="font-size: 3rem"] {
+                font-size: 2.5rem !important;
+                letter-spacing: 6px !important;
+            }
+
+            /* Version horizontale très petit écran */
+            .logo-variant div[style*="font-size: 2.2rem"] {
+                font-size: 1.8rem !important;
+            }
+        }
+
+        /* Orientation paysage mobile */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .slide {
+                min-height: auto;
+                padding: 60px 0 30px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+            }
+
+            .hero p {
+                margin-bottom: 30px;
+            }
+
+            .hero-logo {
+                width: 70px;
+                height: 70px;
+                margin-bottom: 20px;
+            }
+
+            .section-header {
+                margin-bottom: 30px;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide-content > * {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            color: #D4AF37;
+            margin-bottom: 20px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #cccccc;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Slide Navigation */
+        .slide-nav {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+
+        .slide-nav button {
+            display: block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.3);
+            border: none;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slide-nav button.active {
+            background: #D4AF37;
+            transform: scale(1.5);
+        }
+
+        /* Logo principal dans hero */
+        .hero-logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 40px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            padding: 15px;
+            filter: drop-shadow(0 15px 35px rgba(212, 175, 55, 0.4));
+        }
+
+        .hero-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#" class="logo-nav">MAYUYA LARR MONEY</a>
+                <ul class="nav-links">
+                    <li><a href="#hero">Accueil</a></li>
+                    <li><a href="#colors">Couleurs</a></li>
+                    <li><a href="#typography">Typographie</a></li>
+                    <li><a href="#logo">Logo</a></li>
+                    <li><a href="#website">Site Web</a></li>
+                    <li><a href="#applications">Applications</a></li>
+                </ul>
+                <!-- Menu burger pour mobile -->
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" style="display: none; background: none; border: none; color: #D4AF37; font-size: 1.5rem; cursor: pointer;">☰</button>
+            </div>
+            <!-- Menu mobile -->
+            <div class="mobile-menu" id="mobileMenu" style="display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(10, 10, 10, 0.98); backdrop-filter: blur(20px); border-top: 1px solid rgba(212, 175, 55, 0.2);">
+                <ul style="list-style: none; padding: 20px 0;">
+                    <li><a href="#hero" onclick="toggleMobileMenu()" style="display: block; padding: 15px 30px; color: #ffffff; text-decoration: none; border-bottom: 1px solid rgba(212, 175, 55, 0.1);">Accueil</a></li>
+                    <li><a href="#colors" onclick="toggleMobileMenu()" style="display: block; padding: 15px 30px; color: #ffffff; text-decoration: none; border-bottom: 1px solid rgba(212, 175, 55, 0.1);">Couleurs</a></li>
+                    <li><a href="#typography" onclick="toggleMobileMenu()" style="display: block; padding: 15px 30px; color: #ffffff; text-decoration: none; border-bottom: 1px solid rgba(212, 175, 55, 0.1);">Typographie</a></li>
+                    <li><a href="#logo" onclick="toggleMobileMenu()" style="display: block; padding: 15px 30px; color: #ffffff; text-decoration: none; border-bottom: 1px solid rgba(212, 175, 55, 0.1);">Logo</a></li>
+                    <li><a href="#website" onclick="toggleMobileMenu()" style="display: block; padding: 15px 30px; color: #ffffff; text-decoration: none; border-bottom: 1px solid rgba(212, 175, 55, 0.1);">Site Web</a></li>
+                    <li><a href="#applications" onclick="toggleMobileMenu()" style="display: block; padding: 15px 30px; color: #ffffff; text-decoration: none;">Applications</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Slide Navigation -->
+    <div class="slide-nav">
+        <button class="active" onclick="scrollToSlide(0)"></button>
+        <button onclick="scrollToSlide(1)"></button>
+        <button onclick="scrollToSlide(2)"></button>
+        <button onclick="scrollToSlide(3)"></button>
+        <button onclick="scrollToSlide(4)"></button>
+        <button onclick="scrollToSlide(5)"></button>
+    </div>
+
+    <!-- Slide 1: Hero -->
+    <section id="hero" class="slide hero">
+        <div class="container">
+            <div class="slide-content">
+                <div class="hero-logo">
+                    <svg width="90" height="90" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FFD700"/>
+                                <stop offset="50%" style="stop-color:#D4AF37"/>
+                                <stop offset="100%" style="stop-color:#B8860B"/>
+                            </linearGradient>
+                        </defs>
+                        
+                        <!-- Cercle principal -->
+                        <circle cx="250" cy="250" r="240" fill="none" stroke="url(#goldGradient)" stroke-width="8"/>
+                        
+                        <!-- MLM en haut -->
+                        <text x="250" y="120" text-anchor="middle" fill="url(#goldGradient)" font-family="Arial, sans-serif" font-size="60" font-weight="bold" letter-spacing="8">MLM</text>
+                        
+                        <!-- Voiture stylisée -->
+                        <g transform="translate(250,250)">
+                            <!-- Corps de voiture -->
+                            <path d="M-80,-20 Q-60,-40 -20,-40 L20,-40 Q60,-40 80,-20 L75,30 Q70,35 55,35 L45,35 Q35,40 20,40 L-20,40 Q-35,40 -45,35 L-55,35 Q-70,35 -75,30 Z" 
+                                  fill="url(#goldGradient)" stroke="#333" stroke-width="2"/>
+                            
+                            <!-- Toit/Vitres -->
+                            <path d="M-60,-20 Q-40,-30 -12,-30 L12,-30 Q40,-30 60,-20 L50,-10 Q40,-5 20,-5 L-20,-5 Q-40,-5 -50,-10 Z" 
+                                  fill="rgba(255,255,255,0.2)" stroke="url(#goldGradient)" stroke-width="1"/>
+                            
+                            <!-- Roues -->
+                            <circle cx="-45" cy="30" r="15" fill="#333" stroke="url(#goldGradient)" stroke-width="3"/>
+                            <circle cx="45" cy="30" r="15" fill="#333" stroke="url(#goldGradient)" stroke-width="3"/>
+                            <circle cx="-45" cy="30" r="8" fill="url(#goldGradient)"/>
+                            <circle cx="45" cy="30" r="8" fill="url(#goldGradient)"/>
+                            
+                            <!-- Phares -->
+                            <circle cx="-65" cy="-10" r="5" fill="rgba(255,255,255,0.9)"/>
+                            <circle cx="65" cy="-10" r="5" fill="rgba(255,255,255,0.9)"/>
+                        </g>
+                        
+                        <!-- Texte courbé en bas -->
+                        <defs>
+                            <path id="circle-path" d="M 250,250 m -180,0 a 180,180 0 1,1 360,0 a 180,180 0 1,1 -360,0"/>
+                        </defs>
+                        <text font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="url(#goldGradient)" letter-spacing="6">
+                            <textPath href="#circle-path" startOffset="50%" text-anchor="middle">MAYUYA LARR MONEY</textPath>
+                        </text>
+                    </svg>
+                </div>
+                <h1>Charte Graphique Premium</h1>
+                <p>Une identité visuelle d'exception pour l'automobile de luxe. Élégance, prestige et performance réunis dans une esthétique intemporelle qui reflète l'excellence de votre marque.</p>
+                <a href="#colors" class="cta-button">Découvrir l'identité</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 2: Color Palette -->
+    <section id="colors" class="slide">
+        <div class="container">
+            <div class="slide-content">
+                <div class="section-header">
+                    <h2>Palette Chromatique de Prestige</h2>
+                    <p>Des couleurs soigneusement sélectionnées pour incarner le luxe automobile et transmettre confiance, exclusivité et raffinement.</p>
+                </div>
+                
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-sample primary-gold"></div>
+                        <h3>Or Royal</h3>
+                        <p><strong>#D4AF37 → #F4E87C</strong></p>
+                        <p>Couleur signature évoquant le prestige et l'excellence</p>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-sample deep-black"></div>
+                        <h3>Noir Profond</h3>
+                        <p><strong>#000000 → #1A1A1A</strong></p>
+                        <p>Sophistication et mystère, base de l'élégance</p>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-sample platinum"></div>
+                        <h3>Platine</h3>
+                        <p><strong>#E5E4E2 → #C0C0C0</strong></p>
+                        <p>Modernité et finesse métallique</p>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-sample royal-blue"></div>
+                        <h3>Bleu Royal</h3>
+                        <p><strong>#1E3A8A → #3B82F6</strong></p>
+                        <p>Confiance et fiabilité institutionnelle</p>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-sample emerald"></div>
+                        <h3>Émeraude</h3>
+                        <p><strong>#065F46 → #10B981</strong></p>
+                        <p>Innovation et performance durable</p>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-sample pure-white"></div>
+                        <h3>Blanc Pur</h3>
+                        <p><strong>#FFFFFF → #F8FAFC</strong></p>
+                        <p>Pureté et clarté exceptionnelle</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 3: Typography -->
+    <section id="typography" class="slide">
+        <div class="container">
+            <div class="slide-content">
+                <div class="section-header">
+                    <h2>Typographies d'Excellence</h2>
+                    <p>Une hiérarchie typographique sophistiquée alliant tradition et modernité pour une communication premium.</p>
+                </div>
+                
+                <div class="typo-showcase">
+                    <div class="typo-examples">
+                        <h1>Cinzel - Titres Principaux</h1>
+                        <h2>Playfair Display - Sous-titres</h2>
+                        <p><strong>Inter - Corps de texte</strong><br>
+                        Cette typographie moderne et géométrique assure une lisibilité parfaite sur tous supports, digital et print. Sa polyvalence en fait l'outil idéal pour les contenus informatifs et les descriptions techniques.</p>
+                    </div>
+                    
+                    <div class="typo-description">
+                        <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 15px;">
+                            <h3 style="color: #D4AF37; margin-bottom: 20px;">Principes Typographiques</h3>
+                            <ul style="text-align: left; line-height: 2;">
+                                <li><strong>Cinzel</strong> : Majestueuse pour les titres principaux</li>
+                                <li><strong>Playfair Display</strong> : Élégante pour les sous-titres</li>
+                                <li><strong>Inter</strong> : Moderne et lisible pour le contenu</li>
+                                <li><strong>Hiérarchie claire</strong> : Lecture fluide et professionnelle</li>
+                                <li><strong>Contraste optimal</strong> : Accessibilité garantie</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 4: Logo Design -->
+    <section id="logo" class="slide">
+        <div class="container">
+            <div class="slide-content">
+                <div class="section-header">
+                    <h2>Conception du Logo MAYUYA LARR MONEY</h2>
+                    <p>Un emblème distinctif qui capture l'essence du luxe automobile et de l'excellence financière.</p>
+                </div>
+                
+                <div class="logo-showcase">
+                    <!-- Logo principal avec cercle complet -->
+
+                    <div class="logo-variant">
+                        <img width="300" height="300" src="assets/1.png" alt="image-1">
+                        <h4 style="margin-top: 20px; color: #D4AF37;">Version Cercle Partiel</h4>
+                        <p style="margin-top: 10px; color: #cccccc;">Design moderne avec ouverture dynamique</p>
+                    </div>
+                    <div class="logo-variant">
+                        <img width="300" height="300" src="assets/2.png" alt="image-2">
+                        <h4 style="margin-top: 20px; color: #D4AF37;">Version Cercle Partiel</h4>
+                        <p style="margin-top: 10px; color: #cccccc;">Design moderne avec ouverture dynamique</p>
+                    </div>
+                    
+                    <!-- Logo version fond blanc -->
+                    <div class="logo-variant" style="background: #ffffff;">
+                        <img width="300" height="300" src="assets/3.png" alt="image-3">
+                        <h4 style="margin-top: 20px; color: #D4AF37;">Version Fond Clair</h4>
+                        <p style="margin-top: 10px; color: #666;">Optimisée pour fonds blancs</p>
+                    </div>
+                    
+                    <!-- Logo monogramme simplifié -->
+                    <div class="logo-variant">
+                        <img width="300" height="300" src="assets/6.png" alt="image-4">
+                        <h4 style="margin-top: 20px; color: #D4AF37;">Monogramme Premium</h4>
+                        <p style="margin-top: 10px; color: #cccccc;">Version simplifiée pour petites tailles</p>
+                    </div>
+                </div>
+
+                <!-- Version horizontale premium -->
+                <div style="margin-top: 60px; text-align: center;">
+                    <h3 style="color: #D4AF37; margin-bottom: 30px; font-family: 'Cinzel', serif;">Version Horizontale Premium</h3>
+                    <div style="background: rgba(255,255,255,0.05); padding: 50px; border-radius: 25px; border: 2px solid rgba(212, 175, 55, 0.3); backdrop-filter: blur(10px);">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 50px; flex-wrap: wrap;">
+                            <!-- Logo circulaire compact -->
+                            <img width="150" height="150" src="assets/6.png" alt="image-5">
+                            
+                            <!-- Texte de marque -->
+                            <div style="text-align: left;">
+                                <div style="font-family: 'Cinzel', serif; font-size: 3.2rem; color: #D4AF37; font-weight: 700; line-height: 1; filter: drop-shadow(0 3px 6px rgba(212, 175, 55, 0.3));">MAYUYA LARR</div>
+                                <div style="font-family: 'Cinzel', serif; font-size: 3.2rem; color: #D4AF37; font-weight: 700; line-height: 1; filter: drop-shadow(0 3px 6px rgba(212, 175, 55, 0.3));">MONEY</div>
+                                <div style="font-family: 'Inter', sans-serif; font-size: 1.1rem; color: #E5E4E2; margin-top: 12px; letter-spacing: 4px; font-weight: 300;">LUXURY AUTOMOTIVE FINANCE</div>
+                                <div style="width: 80px; height: 3px; background: linear-gradient(90deg, #D4AF37, #F4E87C); margin-top: 15px; border-radius: 2px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section concept et symbolisme -->
+                <div style="margin-top: 60px; text-align: left; max-width: 900px; margin-left: auto; margin-right: auto;">
+                    <h3 style="color: #D4AF37; margin-bottom: 25px; font-family: 'Cinzel', serif; font-size: 2rem;">Concept & Symbolisme</h3>
+                    <div style="background: rgba(255,255,255,0.03); padding: 40px; border-radius: 20px; border-left: 4px solid #D4AF37;">
+                        <p style="line-height: 1.8; color: #cccccc; font-size: 1.1rem; margin-bottom: 20px;">
+                            Le logo MAYUYA LARR MONEY incarne la fusion parfaite entre excellence automobile et expertise financière. 
+                            Le cercle doré symbolise la perfection et l'exclusivité, tandis que la silhouette automobile stylisée 
+                            évoque la performance et le luxe.
+                        </p>
+                        <p style="line-height: 1.8; color: #cccccc; font-size: 1.1rem;">
+                            Le monogramme "MLM" ancré dans la tradition typographique renforce l'identité de marque et la mémorabilité. 
+                            Cette approche circulaire crée un sceau de qualité premium qui inspire confiance et prestige, 
+                            parfaitement adapté aux secteurs de l'automobile de luxe et du financement premium.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 5: Website Design -->
+    <section id="website" class="slide">
+        <div class="container">
+            <div class="slide-content">
+                <div class="section-header">
+                    <h2>Design Web Premium</h2>
+                    <p>Une expérience digitale immersive qui reflète l'excellence de votre marque automobile.</p>
+                </div>
+                
+                <div class="website-preview">
+                    <div class="browser-bar">
+                        <div class="browser-dot dot-red"></div>
+                        <div class="browser-dot dot-yellow"></div>
+                        <div class="browser-dot dot-green"></div>
+                        <span style="margin-left: 20px; color: #888; font-size: 0.9rem;">www.mayuyalarrmoney.com</span>
+                    </div>
+                    
+                    <div class="website-content">
+                        <div class="website-header">
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <svg width="40" height="40" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="goldWeb" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#FFD700"/>
+                                            <stop offset="100%" style="stop-color:#D4AF37"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <circle cx="250" cy="250" r="240" fill="none" stroke="url(#goldWeb)" stroke-width="15"/>
+                                    <text x="250" y="200" text-anchor="middle" fill="url(#goldWeb)" font-family="Arial" font-size="120" font-weight="bold">MLM</text>
+                                </svg>
+                                <div style="font-family: 'Cinzel', serif; font-size: 1.3rem; color: #D4AF37; font-weight: 600;">MAYUYA LARR MONEY</div>
+                            </div>
+                            <div class="website-nav">
+                                <a href="#">Accueil</a>
+                                <a href="#">Véhicules</a>
+                                <a href="#">Financement</a>
+                                <a href="#">Services</a>
+                                <a href="#">Contact</a>
+                            </div>
+                        </div>
+                        
+                        <div class="hero-section">
+                            <h1>Excellence Automobile & Finance Premium</h1>
+                            <p style="color: #cccccc; margin-bottom: 30px; font-size: 1.1rem;">Découvrez notre expertise en financement automobile de luxe et notre sélection exclusive de véhicules premium</p>
+                            <div class="cta-button" style="font-size: 0.9rem;">Explorer nos Services</div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; margin-top: 50px;">
+                            <div style="background: rgba(212, 175, 55, 0.1); padding: 25px; border-radius: 15px; text-align: center; border: 1px solid rgba(212, 175, 55, 0.2);">
+                                <div style="font-size: 2rem; margin-bottom: 10px;">💰</div>
+                                <h4 style="color: #D4AF37; margin-bottom: 8px;">Financement Sur Mesure</h4>
+                                <p style="color: #ccc; font-size: 0.9rem;">Solutions personnalisées</p>
+                            </div>
+                            <div style="background: rgba(212, 175, 55, 0.1); padding: 25px; border-radius: 15px; text-align: center; border: 1px solid rgba(212, 175, 55, 0.2);">
+                                <div style="font-size: 2rem; margin-bottom: 10px;">🚗</div>
+                                <h4 style="color: #D4AF37; margin-bottom: 8px;">Véhicules Premium</h4>
+                                <p style="color: #ccc; font-size: 0.9rem;">Sélection exclusive</p>
+                            </div>
+                            <div style="background: rgba(212, 175, 55, 0.1); padding: 25px; border-radius: 15px; text-align: center; border: 1px solid rgba(212, 175, 55, 0.2);">
+                                <div style="font-size: 2rem; margin-bottom: 10px;">👔</div>
+                                <h4 style="color: #D4AF37; margin-bottom: 8px;">Conseil Expert</h4>
+                                <p style="color: #ccc; font-size: 0.9rem;">Accompagnement VIP</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 6: Applications -->
+    <section id="applications" class="slide">
+        <div class="container">
+            <div class="slide-content">
+                <div class="section-header">
+                    <h2>Applications de la Marque</h2>
+                    <p>Déclinaison cohérente de l'identité visuelle sur tous les supports de communication.</p>
+                </div>
+                
+                <div class="applications-grid">
+                    <div class="application-card">
+                        <div class="application-icon">📱</div>
+                        <h3>Digital</h3>
+                        <p>Site web, réseaux sociaux, applications mobiles avec design responsive et animations fluides</p>
+                    </div>
+                    
+                    <div class="application-card">
+                        <div class="application-icon">🏢</div>
+                        <h3>Concessions</h3>
+                        <p>Signalétique premium, habillage des espaces de vente, supports de présentation véhicules</p>
+                    </div>
+                    
+                    <div class="application-card">
+                        <div class="application-icon">📄</div>
+                        <h3>Print</h3>
+                        <p>Brochures, catalogues, cartes de visite, papeterie avec finitions dorées et vernis sélectifs</p>
+                    </div>
+                    
+                    <div class="application-card">
+                        <div class="application-icon">🎬</div>
+                        <h3>Vidéo</h3>
+                        <p>Animations logo, publicités, contenus YouTube avec transitions élégantes et effets de luxe</p>
+                    </div>
+                    
+                    <div class="application-card">
+                        <div class="application-icon">👕</div>
+                        <h3>Merchandising</h3>
+                        <p>Vêtements, accessoires, objets promotionnels reflétant l'image premium de la marque</p>
+                    </div>
+                    
+                    <div class="application-card">
+                        <div class="application-icon">🚗</div>
+                        <h3>Véhicules</h3>
+                        <p>Badges, autocollants, plaques d'immatriculation personnalisées, habillage véhicules</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 60px; text-align: center;">
+                    <h3 style="color: #D4AF37; margin-bottom: 30px; font-family: 'Cinzel', serif;">Prêt à transformer votre image de marque ?</h3>
+                    <div class="cta-button">Commencer votre projet</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const isVisible = mobileMenu.style.display === 'block';
+            mobileMenu.style.display = isVisible ? 'none' : 'block';
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const nav = document.querySelector('.nav');
+            
+            if (!nav.contains(event.target) && mobileMenu.style.display === 'block') {
+                mobileMenu.style.display = 'none';
+            }
+        });
+
+        // Smooth scrolling and navigation
+        function scrollToSlide(index) {
+            const slides = document.querySelectorAll('.slide');
+            const buttons = document.querySelectorAll('.slide-nav button');
+            
+            slides[index].scrollIntoView({ behavior: 'smooth' });
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            buttons[index].classList.add('active');
+            
+            // Close mobile menu if open
+            document.getElementById('mobileMenu').style.display = 'none';
+        }
+
+        // Update active nav button on scroll
+        window.addEventListener('scroll', () => {
+            const slides = document.querySelectorAll('.slide');
+            const buttons = document.querySelectorAll('.slide-nav button');
+            
+            let current = 0;
+            slides.forEach((slide, index) => {
+                const rect = slide.getBoundingClientRect();
+                if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                    current = index;
+                }
+            });
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            if (buttons[current]) {
+                buttons[current].classList.add('active');
+            }
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+                // Close mobile menu
+                document.getElementById('mobileMenu').style.display = 'none';
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.color-card, .logo-variant, .application-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                document.getElementById('mobileMenu').style.display = 'none';
+            }
+        });
+
+        // Touch events for better mobile experience
+        let touchStartY = 0;
+        let touchEndY = 0;
+
+        document.addEventListener('touchstart', function(event) {
+            touchStartY = event.touches[0].clientY;
+        });
+
+        document.addEventListener('touchend', function(event) {
+            touchEndY = event.changedTouches[0].clientY;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartY - touchEndY;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                const slides = document.querySelectorAll('.slide');
+                const currentSlide = Array.from(slides).findIndex(slide => {
+                    const rect = slide.getBoundingClientRect();
+                    return rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2;
+                });
+                
+                if (diff > 0 && currentSlide < slides.length - 1) {
+                    // Swipe up - next slide
+                    scrollToSlide(currentSlide + 1);
+                } else if (diff < 0 && currentSlide > 0) {
+                    // Swipe down - previous slide
+                    scrollToSlide(currentSlide - 1);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

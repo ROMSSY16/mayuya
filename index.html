@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charte Graphique Automobile Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600;700&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 60px 0;
+        }
+
+        .slide-content {
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-nav {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #D4AF37;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 300;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #D4AF37;
+        }
+
+        /* Slide 1 - Hero */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23111" width="1200" height="800"/><path fill="%23D4AF37" opacity="0.1" d="M200,400 Q600,200 1000,400 T1200,400 V800 H0 V400 Q200,200 400,400"/></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 4.5rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #D4AF37 0%, #F4E87C 50%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(135deg, #D4AF37 0%, #F4E87C 100%);
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Color Palette */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .color-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .color-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .color-sample {
+            width: 100%;
+            height: 120px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .primary-gold { background: linear-gradient(135deg, #D4AF37 0%, #F4E87C 100%); }
+        .deep-black { background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%); }
+        .platinum { background: linear-gradient(135deg, #E5E4E2 0%, #C0C0C0 100%); }
+        .royal-blue { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
+        .emerald { background: linear-gradient(135deg, #065f46 0%, #10b981 100%); }
+        .pure-white { background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); }
+
+        /* Typography */
+        .typo-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .typo-examples h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            color: #D4AF37;
+            margin-bottom: 20px;
+        }
+
+        .typo-examples h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #E5E4E2;
+            margin-bottom: 15px;
+        }
+
+        .typo-examples p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #cccccc;
+        }
+
+        /* Logo Design */
+        .logo-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .logo-variant {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 25px;
+            padding: 40px;
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            text-align: center;
+        }
+
+        .logo-primary {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #D4AF37 0%, #F4E87C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+
+        .logo-primary::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #D4AF37, #F4E87C);
+            border-radius: 2px;
+        }
+
+        /* Website Layout Preview */
+        .website-preview {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 50px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .browser-bar {
+            background: #2a2a2a;
+            border-radius: 10px 10px 0 0;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .browser-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .dot-red { background: #ff5f57; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #28ca42; }
+
+        .website-content {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            padding: 40px;
+            border-radius: 0 0 10px 10px;
+            text-align: left;
+        }
+
+        .website-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .website-nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .website-nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 300;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .hero-section h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            color: #D4AF37;
+            margin-bottom: 20px;
+        }
+
+        /* Applications */
+        .applications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .application-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .application-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .application-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #D4AF37 0%, #F4E87C 100%);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .typo-showcase {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide-content > * {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            color: #D4AF37;
+            margin-bottom: 20px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #cccccc;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Slide Navigation */
+        .slide-nav {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+
+        .slide-nav button {
+            display: block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.3);
+            border: none;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slide-nav button.active {
+            background: #D4AF37;
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#" class="logo-nav">MAYUYA LARR MONEY</a>
+                <ul class="nav-links">
+                    <li><a href="#hero">Accueil</a></li>
+                    <li><a href="#colors">Couleurs</a></li>
+                    <li><a href="#typography">Typographie</a></li>
+                    <li><a href="#logo">Logo</a></li>
+                    <li><a href="#website">Site Web</a></li>
+                    <li><a href="#applications">Applications</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Slide Navigation -->
+    <div class="slide-nav">
+        <button class="active" onclick="scrollToSlide(0)"></button>
+        <button onclick="scrollToSlide(1)"></button>
+        <button onclick="scrollToSlide(2)"></button>
+        <button onclick="scrollToSlide(3)"></button>
+        <button onclick="scrollToSlide(4)"></button>
+        <button onclick="scrollToSlide(5)"></button>
+    </div>
+
+    <!-- Slide 1: Hero -->
+    <section id="hero" class="slide hero">
+        <div class="container">
+            <div class="slide-content">
+                <h1>Charte Graphique Premium</h1>
+                <p>Une identité visuelle d'exception pour l'automobile de luxe. Élégance, prestige et performance réunis dans une esthétique intemporelle qui reflète l'excellence de votre marque.</p>
+                <a href="#colors" class="cta-button">Découvrir l'identité</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 2: Color Palette -->
+    <section id="colors" class="slide">
+        <div class="container">
+            <div class="slide-content">
+                <div class="section-header">
+                    <h2>Palette Chromatique de Prestige</h2>
+                    <p>Des couleurs soigneusement sélectionnées pour incarner le luxe automobile et transmettre confiance, exclusivité et raffinement.</p>
+                </div>
+                
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-sample primary-gold"></div>
+                        <h3>Or Royal</h3>
+                        <p><strong>#D4AF37 → #F4E87C</strong></p>
+                        <p>Couleur signature évoquant le prestige et l'excellence</p>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-sample deep-black"></div>
+                        <h3>Noir Profond</h3>
+                        <p><strong>#000000 → #1A1A1A</strong></p>
+                        <p>Sophistication et mystère, base de l'élégance</p>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-sample platinum"></div>
+                        <h3>Platine</h3>
+                        <p><strong>#E5E4E2 → #C0C0C0</strong></p>
+                        <p>Modernité et finesse métallique</p>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-sample royal-blue"></div>
+                        <h3>Bleu Royal</h3>
+                        <p><strong>#1E3A8A → #3B82F6</strong></p>
+                        <p>Confiance et fiabilité institutionnelle</p>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-sample emerald"></div>
+                        <h3>Émeraude</h3>
+                        <p><strong>#065F46 → #10B981</strong></p>
+                        <p>Innovation et performance durable</p>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-sample pure-white"></div>
+                        <h3>Blanc Pur</h3>
+                        <p><strong>#FFFFFF → #F8FAFC</strong></p>
+                        <p>Pureté et clarté exceptionnelle</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 3: Typography -->
+    <section id="typography" class="slide">
+        <div class="container">
+            <div class="slide-content">
+                <div class="section-header">
+                    <h2>Typographies d'Excellence</h2>
+                    <p>Une hiérarchie typographique sophistiquée alliant tradition et modernité pour une communication premium.</p>
+                </div>
+                
+                <div class="typo-showcase">
+                    <div class="typo-examples">
+                        <h1>Cinzel - Titres Principaux</h1>
+                        <h2>Playfair Display - Sous-titres</h2>
+                        <p><strong>Inter - Corps de texte</strong><br>
+                        Cette typographie moderne et géométrique assure une lisibilité parfaite sur tous supports, digital et print. Sa polyvalence en fait l'outil idéal pour les contenus informatifs et les descriptions techniques.</p>
+                    </div>
+                    
+                    <div class="typo-description">
+                        <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 15px;">
+                            <h3 style="color: #D4AF37; margin-bottom: 20px;">Principes Typographiques</h3>
+                            <ul style="text-align: left; line-height: 2;">
+                                <li><strong>Cinzel</strong> : Majestueuse pour les titres principaux</li>
+                                <li><strong>Playfair Display</strong> : Élégante pour les sous-titres</li>
+                                <li><strong>Inter</strong> : Moderne et lisible pour le contenu</li>
+                                <li><strong>Hiérarchie claire</strong> : Lecture fluide et professionnelle</li>
+                                <li><strong>Contraste optimal</strong> : Accessibilité garantie</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 4: Logo Design -->
+    <section id="logo" class="slide">
+        <div class="container">
+            <div class="slide-content">
+                <div class="section-header">
+                    <h2>Conception du Logo MAYUYA LARR MONEY</h2>
+                    <p>Un emblème distinctif qui capture l'essence du luxe automobile et de l'excellence financière.</p>
+                </div>
+                
+                <!-- Logo principal circulaire -->
+                <div style="margin-bottom: 60px;">
+                    <div class="logo-main-circular">
+                        <svg width="350" height="350" viewBox="0 0 350 350" style="margin: 0 auto; display: block; filter: drop-shadow(0 10px 30px rgba(212, 175, 55, 0.3));">
+                            <defs>
+                                <!-- Gradients améliorés -->
+                                <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#FFD700"/>
+                                    <stop offset="25%" style="stop-color:#F4E87C"/>
+                                    <stop offset="50%" style="stop-color:#D4AF37"/>
+                                    <stop offset="75%" style="stop-color:#F4E87C"/>
+                                    <stop offset="100%" style="stop-color:#B8860B"/>
+                                </linearGradient>
+                                
+                                <radialGradient id="innerGradient" cx="50%" cy="30%" r="70%">
+                                    <stop offset="0%" style="stop-color:#1a1a1a"/>
+                                    <stop offset="100%" style="stop-color:#000000"/>
+                                </radialGradient>
+                                
+                                <linearGradient id="carGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ffffff"/>
+                                    <stop offset="50%" style="stop-color:#E5E4E2"/>
+                                    <stop offset="100%" style="stop-color:#C0C0C0"/>
+                                </linearGradient>
+                                
+                                <radialGradient id="goldRadial" cx="50%" cy="50%" r="50%">
+                                    <stop offset="0%" style="stop-color:#FFD700"/>
+                                    <stop offset="100%" style="stop-color:#D4AF37"/>
+                                </radialGradient>
+                                
+                                <!-- Filtres pour effets -->
+                                <filter id="glow">
+                                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                    <feMerge> 
+                                        <feMergeNode in="coloredBlur"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                            </defs>
+                            
+                            <!-- Cercle extérieur avec double bordure -->
+                            <circle cx="175" cy="175" r="170" fill="url(#innerGradient)" stroke="url(#goldGradient)" stroke-width="8"/>
+                            <circle cx="175" cy="175" r="160" fill="none" stroke="rgba(255,215,0,0.4)" stroke-width="2"/>
+                            
+                            <!-- Lettres MLM stylisées en haut -->
+                            <g transform="translate(175,70)">
+                                <text x="0" y="0" text-anchor="middle" fill="url(#goldGradient)" font-family="Cinzel, serif" font-size="32" font-weight="700" letter-spacing="12" filter="url(#glow)">MLM</text>
+                                <!-- Ligne décorative sous MLM -->
+                                <line x1="-30" y1="15" x2="30" y2="15" stroke="url(#goldGradient)" stroke-width="2" opacity="0.8"/>
+                            </g>
+                            
+                            <!-- Icône de voiture sophistiquée au centre -->
+                            <g transform="translate(175,175)">
+                                <!-- Ombre de la voiture -->
+                                <g transform="translate(2,2)" opacity="0.3">
+                                    <ellipse cx="0" cy="25" rx="50" ry="8" fill="#000"/>
+                                </g>
+                                
+                                <!-- Carrosserie principale avec design moderne -->
+                                <g>
+                                    <!-- Corps principal -->
+                                    <path d="M-45,-15 Q-35,-28 -15,-28 L15,-28 Q35,-28 45,-15 L42,18 Q38,22 30,22 L25,22 Q20,25 15,25 L-15,25 Q-20,25 -25,22 L-30,22 Q-38,22 -42,18 Z" 
+                                          fill="url(#carGradient)" stroke="url(#goldGradient)" stroke-width="1.5"/>
+                                    
+                                    <!-- Toit/Vitres avec effet de profondeur -->
+                                    <path d="M-35,-15 Q-25,-23 -8,-23 L8,-23 Q25,-23 35,-15 L30,-8 Q25,-5 15,-5 L-15,-5 Q-25,-5 -30,-8 Z" 
+                                          fill="rgba(255,255,255,0.15)" stroke="rgba(255,215,0,0.6)" stroke-width="1"/>
+                                    
+                                    <!-- Pare-brise avant -->
+                                    <path d="M-30,-8 Q-20,-18 0,-18 Q20,-18 30,-8" 
+                                          stroke="rgba(255,215,0,0.8)" stroke-width="1.5" fill="none"/>
+                                    
+                                    <!-- Détails de carrosserie -->
+                                    <line x1="-40" y1="0" x2="40" y2="0" stroke="url(#goldGradient)" stroke-width="0.8" opacity="0.6"/>
+                                    <line x1="-38" y1="8" x2="38" y2="8" stroke="url(#goldGradient)" stroke-width="0.6" opacity="0.4"/>
+                                </g>
+                                
+                                <!-- Roues avec design premium -->
+                                <g>
+                                    <!-- Roue gauche -->
+                                    <circle cx="-25" cy="18" r="10" fill="#1a1a1a" stroke="url(#goldGradient)" stroke-width="2"/>
+                                    <circle cx="-25" cy="18" r="7" fill="url(#goldRadial)"/>
+                                    <circle cx="-25" cy="18" r="4" fill="#1a1a1a"/>
+                                    <!-- Rayons -->
+                                    <g stroke="url(#goldGradient)" stroke-width="0.8" opacity="0.8">
+                                        <line x1="-25" y1="11" x2="-25" y2="25"/>
+                                        <line x1="-32" y1="18" x2="-18" y2="18"/>
+                                        <line x1="-30" y1="13" x2="-20" y2="23"/>
+                                        <line x1="-20" y1="13" x2="-30" y2="23"/>
+                                    </g>
+                                    
+                                    <!-- Roue droite -->
+                                    <circle cx="25" cy="18" r="10" fill="#1a1a1a" stroke="url(#goldGradient)" stroke-width="2"/>
+                                    <circle cx="25" cy="18" r="7" fill="url(#goldRadial)"/>
+                                    <circle cx="25" cy="18" r="4" fill="#1a1a1a"/>
+                                    <!-- Rayons -->
+                                    <g stroke="url(#goldGradient)" stroke-width="0.8" opacity="0.8">
+                                        <line x1="25" y1="11" x2="25" y2="25"/>
+                                        <line x1="18" y1="18" x2="32" y2="18"/>
+                                        <line x1="20" y1="13" x2="30" y2="23"/>
+                                        <line x1="30" y1="13" x2="20" y2="23"/>
+                                    </g>
+                                </g>
+                                
+                                <!-- Phares avant -->
+                                <circle cx="-35" cy="-8" r="3" fill="rgba(255,255,255,0.9)" stroke="url(#goldGradient)" stroke-width="0.5"/>
+                                <circle cx="35" cy="-8" r="3" fill="rgba(255,255,255,0.9)" stroke="url(#goldGradient)" stroke-width="0.5"/>
+                                
+                                <!-- Lignes de vitesse dynamiques -->
+                                <g stroke="url(#goldGradient)" stroke-width="2" opacity="0.6">
+                                    <path d="M-60,-8 Q-50,-8 -45,-8" stroke-linecap="round"/>
+                                    <path d="M-62,-2 Q-50,-2 -43,-2" stroke-linecap="round"/>
+                                    <path d="M-60,4 Q-48,4 -41,4" stroke-linecap="round"/>
+                                </g>
+                            </g>
+                            
+                            <!-- Texte courbé MAYUYA LARR MONEY en bas -->
+                            <defs>
+                                <path id="circle-path" d="M 175,175 m -130,0 a 130,130 0 1,1 260,0 a 130,130 0 1,1 -260,0"/>
+                            </defs>
+                            <text font-family="Cinzel, serif" font-size="18" font-weight="700" fill="url(#goldGradient)" letter-spacing="4" filter="url(#glow)">
+                                <textPath href="#circle-path" startOffset="50%" text-anchor="middle">MAYUYA LARR MONEY</textPath>
+                            </text>
+                            
+                            <!-- Éléments décoratifs -->
+                            <g opacity="0.3">
+                                <!-- Points décoratifs -->
+                                <circle cx="175" cy="45" r="2" fill="url(#goldGradient)"/>
+                                <circle cx="175" cy="305" r="2" fill="url(#goldGradient)"/>
+                                <circle cx="45" cy="175" r="2" fill="url(#goldGradient)"/>
+                                <circle cx="305" cy="175" r="2" fill="url(#goldGradient)"/>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Variantes du logo -->
+                <div class="logo-showcase">
+                    <div class="logo-variant">
+                        <svg width="220" height="220" viewBox="0 0 220 220" style="filter: drop-shadow(0 5px 15px rgba(212, 175, 55, 0.2));">
+                            <defs>
+                                <linearGradient id="goldGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#FFD700"/>
+                                    <stop offset="50%" style="stop-color:#D4AF37"/>
+                                    <stop offset="100%" style="stop-color:#B8860B"/>
+                                </linearGradient>
+                                <radialGradient id="innerGradient2" cx="50%" cy="30%" r="70%">
+                                    <stop offset="0%" style="stop-color:#1a1a1a"/>
+                                    <stop offset="100%" style="stop-color:#000000"/>
+                                </radialGradient>
+                                <filter id="glow2">
+                                    <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                                    <feMerge> 
+                                        <feMergeNode in="coloredBlur"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                            </defs>
+                            <circle cx="110" cy="110" r="105" fill="url(#innerGradient2)" stroke="url(#goldGradient2)" stroke-width="6"/>
+                            <circle cx="110" cy="110" r="95" fill="none" stroke="rgba(255,215,0,0.3)" stroke-width="1"/>
+                            
+                            <text x="110" y="55" text-anchor="middle" fill="url(#goldGradient2)" font-family="Cinzel, serif" font-size="24" font-weight="700" letter-spacing="8" filter="url(#glow2)">MLM</text>
+                            <line x1="85" y1="68" x2="135" y2="68" stroke="url(#goldGradient2)" stroke-width="1.5" opacity="0.8"/>
+                            
+                            <g transform="translate(110,110)">
+                                <!-- Voiture premium -->
+                                <path d="M-35,-12 Q-25,-22 -12,-22 L12,-22 Q25,-22 35,-12 L32,14 Q28,17 22,17 L18,17 Q15,19 12,19 L-12,19 Q-15,19 -18,17 L-22,17 Q-28,17 -32,14 Z" 
+                                      fill="url(#goldGradient2)" stroke="white" stroke-width="1" opacity="0.9"/>
+                                      
+                                <path d="M-25,-12 Q-18,-18 -6,-18 L6,-18 Q18,-18 25,-12 L20,-6 L-20,-6 Z" 
+                                      fill="rgba(255,255,255,0.2)" stroke="rgba(255,215,0,0.8)" stroke-width="0.8"/>
+                                      
+                                <circle cx="-18" cy="14" r="6" fill="#1a1a1a" stroke="url(#goldGradient2)" stroke-width="1.5"/>
+                                <circle cx="18" cy="14" r="6" fill="#1a1a1a" stroke="url(#goldGradient2)" stroke-width="1.5"/>
+                                <circle cx="-18" cy="14" r="3" fill="url(#goldGradient2)"/>
+                                <circle cx="18" cy="14" r="3" fill="url(#goldGradient2)"/>
+                                
+                                <circle cx="-28" cy="-6" r="2" fill="rgba(255,255,255,0.9)"/>
+                                <circle cx="28" cy="-6" r="2" fill="rgba(255,255,255,0.9)"/>
+                            </g>
+                            
+                            <text x="110" y="175" text-anchor="middle" fill="url(#goldGradient2)" font-family="Cinzel, serif" font-size="11" font-weight="600" letter-spacing="1.5" filter="url(#glow2)">MAYUYA LARR MONEY</text>
+                        </svg>
+                        <h4 style="margin-top: 20px; color: #D4AF37;">Version Principale</h4>
+                        <p style="margin-top: 10px; color: #cccccc;">Logo circulaire premium avec icône auto</p>
+                    </div>
+                    
+                    <div class="logo-variant" style="background: #ffffff;">
+                        <svg width="220" height="220" viewBox="0 0 220 220">
+                            <defs>
+                                <linearGradient id="goldGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#D4AF37"/>
+                                    <stop offset="100%" style="stop-color:#B8860B"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="110" cy="110" r="105" fill="#ffffff" stroke="url(#goldGradient3)" stroke-width="6"/>
+                            <circle cx="110" cy="110" r="95" fill="none" stroke="rgba(212, 175, 55, 0.3)" stroke-width="1"/>
+                            
+                            <text x="110" y="55" text-anchor="middle" fill="url(#goldGradient3)" font-family="Cinzel, serif" font-size="24" font-weight="700" letter-spacing="8">MLM</text>
+                            <line x1="85" y1="68" x2="135" y2="68" stroke="url(#goldGradient3)" stroke-width="1.5" opacity="0.8"/>
+                            
+                            <g transform="translate(110,110)">
+                                <path d="M-35,-12 Q-25,-22 -12,-22 L12,-22 Q25,-22 35,-12 L32,14 Q28,17 22,17 L18,17 Q15,19 12,19 L-12,19 Q-15,19 -18,17 L-22,17 Q-28,17 -32,14 Z" 
+                                      fill="#333" stroke="#000" stroke-width="1"/>
+                                <path d="M-25,-12 Q-18,-18 -6,-18 L6,-18 Q18,-18 25,-12 L20,-6 L-20,-6 Z" 
+                                      fill="rgba(0,0,0,0.1)" stroke="url(#goldGradient3)" stroke-width="0.8"/>
+                                <circle cx="-18" cy="14" r="6" fill="#000" stroke="url(#goldGradient3)" stroke-width="1.5"/>
+                                <circle cx="18" cy="14" r="6" fill="#000" stroke="url(#goldGradient3)" stroke-width="1.5"/>
+                                <circle cx="-18" cy="14" r="3" fill="url(#goldGradient3)"/>
+                                <circle cx="18" cy="14" r="3" fill="url(#goldGradient3)"/>
+                            </g>
+                            
+                            <text x="110" y="175" text-anchor="middle" fill="url(#goldGradient3)" font-family="Cinzel, serif" font-size="11" font-weight="600" letter-spacing="1.5">MAYUYA LARR MONEY</text>
+                        </svg>
+                        <h4 style="margin-top: 20px; color: #D4AF37;">Version Claire</h4>
+                        <p style="margin-top: 10px; color: #666;">Pour fonds clairs et blancs</p>
+                    </div>
+                    
+                    <div class="logo-variant">
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <div style="font-family: 'Cinzel', serif; font-size: 3.5rem; color: #D4AF37; margin-bottom: 15px; letter-spacing: 8px; filter: drop-shadow(0 3px 6px rgba(212, 175, 55, 0.3));">MLM</div>
+                            <svg width="100" height="50" viewBox="0 0 100 50">
+                                <defs>
+                                    <linearGradient id="carMiniGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#FFD700"/>
+                                        <stop offset="100%" style="stop-color:#D4AF37"/>
+                                    </linearGradient>
+                                </defs>
+                                <path d="M15,25 Q25,10 50,10 Q75,10 85,25 L80,35 Q75,40 65,40 L35,40 Q25,40 20,35 Z" 
+                                      fill="url(#carMiniGrad)" stroke="white" stroke-width="1.5"/>
+                                <path d="M25,25 Q35,15 50,15 Q65,15 75,25 L70,20 L30,20 Z" 
+                                      fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.6)" stroke-width="0.8"/>
+                                <circle cx="35" cy="35" r="7" fill="white" stroke="#D4AF37" stroke-width="1.5"/>
+                                <circle cx="65" cy="35" r="7" fill="white" stroke="#D4AF37" stroke-width="1.5"/>
+                                <circle cx="35" cy="35" r="3" fill="#D4AF37"/>
+                                <circle cx="65" cy="35" r="3" fill="#D4AF37"/>
+                            </svg>
+                        </div>
+                        <h4 style="margin-top: 20px; color: #D4AF37;">Monogramme Premium</h4>
+                        <p style="margin-top: 10px; color: #cccccc;">Version simplifiée élégante</p>
+                    </div>
+                </div>30" r="6" fill="white" stroke="#D4AF37" stroke-width="1"/>
+                                <circle cx="55" cy="30" r="6" fill="white" stroke="#D4AF37" stroke-width="1"/>
+                            </svg>
+                        </div>
+                        <h4 style="margin-top: 20px; color: #D4AF37;">Monogramme</h4>
+                        <p style="margin-top: 10px; color: #cccccc;">Version simplifiée</p>
+                    </div>
+                </div>
+
+                <!-- Logo horizontal amélioré -->
+                <div style="margin-top: 50px; text-align: center;">
+                    <h3 style="color: #D4AF37; margin-bottom: 30px;">Version Horizontale Premium</h3>
+                    <div style="background: rgba(255,255,255,0.05); padding: 50px; border-radius: 25px; border: 2px solid rgba(212, 175, 55, 0.3); backdrop-filter: blur(10px);">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 40px;">
+                            <svg width="140" height="140" viewBox="0 0 140 140" style="filter: drop-shadow(0 8px 25px rgba(212, 175, 55, 0.4));">
+                                <defs>
+                                    <linearGradient id="goldGradientHoriz" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#FFD700"/>
+                                        <stop offset="50%" style="stop-color:#D4AF37"/>
+                                        <stop offset="100%" style="stop-color:#B8860B"/>
+                                    </linearGradient>
+                                    <radialGradient id="innerGradientHoriz" cx="50%" cy="30%" r="70%">
+                                        <stop offset="0%" style="stop-color:#1a1a1a"/>
+                                        <stop offset="100%" style="stop-color:#000000"/>
+                                    </radialGradient>
+                                    <filter id="glowHoriz">
+                                        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                                        <feMerge> 
+                                            <feMergeNode in="coloredBlur"/>
+                                            <feMergeNode in="SourceGraphic"/>
+                                        </feMerge>
+                                    </filter>
+                                </defs>
+                                
+                                <circle cx="70" cy="70" r="65" fill="url(#innerGradientHoriz)" stroke="url(#goldGradientHoriz)" stroke-width="5"/>
+                                <circle cx="70" cy="70" r="58" fill="none" stroke="rgba(255,215,0,0.3)" stroke-width="1"/>
+                                
+                                <text x="70" y="40" text-anchor="middle" fill="url(#goldGradientHoriz)" font-family="Cinzel, serif" font-size="18" font-weight="700" letter-spacing="6" filter="url(#glowHoriz)">MLM</text>
+                                <line x1="50" y1="50" x2="90" y2="50" stroke="url(#goldGradientHoriz)" stroke-width="1.5" opacity="0.8"/>
+                                
+                                <g transform="translate(70,70)">
+                                    <!-- Voiture sophistiquée -->
+                                    <path d="M-25,-8 Q-18,-15 -8,-15 L8,-15 Q18,-15 25,-8 L22,10 Q19,12 15,12 L12,12 Q10,14 8,14 L-8,14 Q-10,14 -12,12 L-15,12 Q-19,12 -22,10 Z" 
+                                          fill="url(#goldGradientHoriz)" stroke="white" stroke-width="1" opacity="0.9"/>
+                                    <path d="M-18,-8 Q-12,-12 -4,-12 L4,-12 Q12,-12 18,-8 L15,-4 L-15,-4 Z" 
+                                          fill="rgba(255,255,255,0.3)" stroke="rgba(255,215,0,0.8)" stroke-width="0.8"/>
+                                    <circle cx="-15" cy="10" r="4" fill="#1a1a1a" stroke="url(#goldGradientHoriz)" stroke-width="1"/>
+                                    <circle cx="15" cy="10" r="4" fill="#1a1a1a" stroke="url(#goldGradientHoriz)" stroke-width="1"/>
+                                    <circle cx="-15" cy="10" r="2" fill="url(#goldGradientHoriz)"/>
+                                    <circle cx="15" cy="10" r="2" fill="url(#goldGradientHoriz)"/>
+                                    <!-- Phares -->
+                                    <circle cx="-20" cy="-4" r="1.5" fill="rgba(255,255,255,0.9)"/>
+                                    <circle cx="20" cy="-4" r="1.5" fill="rgba(255,255,255,0.9)"/>
+                                </g>
+                            </svg>
+                            
+                            <div style="text-align: left;">
+                                <div style="font-family: 'Cinzel', serif; font-size: 2.8rem; color: #D4AF37; font-weight: 700; line-height: 0.9; filter: drop-shadow(0 3px 6px rgba(212, 175, 55, 0.3));">MAYUYA LARR</div>
+                                <div style="font-family: 'Cinzel', serif; font-size: 2.8rem; color: #D4AF37; font-weight: 700; line-height: 0.9; filter: drop-shadow(0 3px 6px rgba(212, 175, 55, 0.3));">MONEY</div>
+                                <div style="font-family: 'Inter', sans-serif; font-size: 1rem; color: #E5E4E2; margin-top: 8px; letter-spacing: 3px; font-weight: 300;">LUXURY AUTOMOTIVE FINANCE</div>
+                                <div style="width: 60px; height: 2px; background: linear-gradient(90deg, #D4AF37, #F4E87C); margin-top: 10px; border-radius: 1px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 50px; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    <h3 style="color: #D4AF37; margin-bottom: 20px;">Concept & Symbolisme</h3>
+                    <p style="line-height: 1.8; color: #cccccc;">
+                        Le logo MAYUYA LARR MONEY incarne la fusion parfaite entre excellence automobile et expertise financière. 
+                        Le cercle doré symbolise la perfection et l'exclusivité, tandis que la silhouette automobile stylisée 
+                        évoque la performance et le luxe. Le monogramme "MLM" ancré dans la tradition typographique 
+                        renforce l'identité de marque et la mémorabilité. Cette approche circulaire crée un sceau de qualité 
+                        premium qui inspire confiance et prestige.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 5: Website Design -->
+    <section id="website" class="slide">
+        <div class="container">
+            <div class="slide-content">
+                <div class="section-header">
+                    <h2>Design Web Premium</h2>
+                    <p>Une expérience digitale immersive qui reflète l'excellence de votre marque automobile.</p>
+                </div>
+                
+                <div class="website-preview">
+                    <div class="browser-bar">
+                        <div class="browser-dot dot-red"></div>
+                        <div class="browser-dot dot-yellow"></div>
+                        <div class="browser-dot dot-green"></div>
+                        <span style="margin-left: 20px; color: #888; font-size: 0.9rem;">www.luxmotors.com</span>
+                    </div>
+                    
+                    <div class="website-content">
+                        <div class="website-header">
+                            <div style="font-family: 'Cinzel', serif; font-size: 1.2rem; color: #D4AF37; font-weight: 600;">MAYUYA LARR MONEY</div>
+                            <div class="website-nav">
+                                <a href="#">Véhicules</a>
+                                <a href="#">Financement</a>
+                                <a href="#">Services</a>
+                                <a href="#">Contact</a>
+                            </div>
+                        </div>
+                        
+                        <div class="hero-section">
+                            <h1>Excellence Automobile & Finance Premium</h1>
+                            <p style="color: #cccccc; margin-bottom: 30px;">Découvrez notre expertise en financement automobile de luxe</p>
+                            <div class="cta-button" style="font-size: 0.9rem;">Explorer nos Services</div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px;">
+                            <div style="background: rgba(212, 175, 55, 0.1); padding: 20px; border-radius: 10px; text-align: center;">
+                                <h4 style="color: #D4AF37;">Financement</h4>
+                                <p style="color: #ccc; font-size: 0.9rem;">Solutions sur mesure</p>
+                            </div>
+                            <div style="background: rgba(212, 175, 55, 0.1); padding: 20px; border-radius: 10px; text-align: center;">
+                                <h4 style="color: #D4AF37;">Véhicules Premium</h4>
+                                <p style="color: #ccc; font-size: 0.9rem;">Sélection exclusive</p>
+                            </div>
+                            <div style="background: rgba(212, 175, 55, 0.1); padding: 20px; border-radius: 10px; text-align: center;">
+                                <h4 style="color: #D4AF37;">Conseil Expert</h4>
+                                <p style="color: #ccc; font-size: 0.9rem;">Accompagnement VIP</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 6: Applications -->
+    <section id="applications" class="slide">
+        <div class="container">
+            <div class="slide-content">
+                <div class="section-header">
+                    <h2>Applications de la Marque</h2>
+                    <p>Déclinaison cohérente de l'identité visuelle sur tous les supports de communication.</p>
+                </div>
+                
+                <div class="applications-grid">
+                    <div class="application-card">
+                        <div class="application-icon">📱</div>
+                        <h3>Digital</h3>
+                        <p>Site web, réseaux sociaux, applications mobiles avec design responsive et animations fluides</p>
+                    </div>
+                    
+                    <div class="application-card">
+                        <div class="application-icon">🏢</div>
+                        <h3>Concessions</h3>
+                        <p>Signalétique premium, habillage des espaces de vente, supports de présentation véhicules</p>
+                    </div>
+                    
+                    <div class="application-card">
+                        <div class="application-icon">📄</div>
+                        <h3>Print</h3>
+                        <p>Brochures, catalogues, cartes de visite, papeterie avec finitions dorées et vernis sélectifs</p>
+                    </div>
+                    
+                    <div class="application-card">
+                        <div class="application-icon">🎬</div>
+                        <h3>Vidéo</h3>
+                        <p>Animations logo, publicités, contenus YouTube avec transitions élégantes et effets de luxe</p>
+                    </div>
+                    
+                    <div class="application-card">
+                        <div class="application-icon">👕</div>
+                        <h3>Merchandising</h3>
+                        <p>Vêtements, accessoires, objets promotionnels reflétant l'image premium de la marque</p>
+                    </div>
+                    
+                    <div class="application-card">
+                        <div class="application-icon">🚗</div>
+                        <h3>Véhicules</h3>
+                        <p>Badges, autocollants, plaques d'immatriculation personnalisées, habillage véhicules</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 60px; text-align: center;">
+                    <h3 style="color: #D4AF37; margin-bottom: 30px;">Prêt à transformer votre image de marque ?</h3>
+                    <div class="cta-button">Commencer votre projet</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling and navigation
+        function scrollToSlide(index) {
+            const slides = document.querySelectorAll('.slide');
+            const buttons = document.querySelectorAll('.slide-nav button');
+            
+            slides[index].scrollIntoView({ behavior: 'smooth' });
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            buttons[index].classList.add('active');
+        }
+
+        // Update active nav button on scroll
+        window.addEventListener('scroll', () => {
+            const slides = document.querySelectorAll('.slide');
+            const buttons = document.querySelectorAll('.slide-nav button');
+            
+            let current = 0;
+            slides.forEach((slide, index) => {
+                const rect = slide.getBoundingClientRect();
+                if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                    current = index;
+                }
+            });
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            buttons[current].classList.add('active');
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
